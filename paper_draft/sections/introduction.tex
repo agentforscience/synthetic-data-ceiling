@@ -1,0 +1,71 @@
+\section{Introduction}
+\label{sec:intro}
+
+How much synthetic data is enough?
+Model-generated data is now a default way to stretch a small real dataset, whether for distillation, augmentation, or instruction tuning.
+The cost of generation grows linearly with the amount generated, so the choice of how much to generate is a budget decision.
+If the benefit saturates early, most of the generation budget is wasted.
+If large amounts actively hurt, the budget buys harm.
+
+Two lines of prior work bear on this question, and neither answers it.
+On one hand, work on model collapse shows that training generative models recursively on their own outputs loses the tails of the data distribution~\citep{shumailov2023curse,shumailov2024collapse,alemohammad2024mad,dohmatob2024tale}, and that keeping real data in the mix limits the damage~\citep{gerstgrasser2024inevitable,bertrand2024stability}.
+These studies concern many generations of self-training.
+The common practical setting is different: a single round of generation by a \emph{stronger} model, added to a fixed real set.
+On the other hand, synthetic augmentation studies report scaling curves for image recognition~\citep{he2023synthetic,azizi2023synthetic,fan2024scaling} and text classification~\citep{ye2022zerogen,yu2023attributed,li2023synthetic}, but each covers one task family with its own generator, student, and metric.
+Their curves cannot be compared across domains.
+
+We run one protocol across three task families (\figref{fig:pipeline}).
+A teacher model sees three random examples from a 100-example real seed set and writes one new example per request.
+We fine-tune a smaller student on the 100 real examples plus $r \times 100$ synthetic ones, for $r$ from 0 to 50, and evaluate on \emph{real} held-out data.
+We cover code generation (\mbpp), math word problems (\gsm), and five-sentence story writing (\roc), with three seeds, an all-real control at matched training-set size, and a direct measurement of the diversity of each synthetic pool.
+
+We use this protocol to test a specific hypothesis in three parts.
+(H1) Gains from synthetic data are logarithmic in the ratio, and a \ratio{3} ratio captures at least 80\% of the maximum benefit.
+(H2) Beyond \ratio{10}, performance plateaus or degrades because the synthetic distribution collapses onto a few modes.
+(H3) Code generation is the most resilient to high ratios, and creative writing degrades earliest.
+
+{\bf Is there a single ceiling?} No.
+At \ratio{3} the student has 63\% of its maximum observed gain on code (95\% CI 13--100\%) and 40\% on math (CI 6--64\%, which excludes 80\%).
+Beyond \ratio{10} the three domains part ways.
+Code pass@1 is flat ($+0.9$ points from \ratio{10} to \ratio{30}, CI $-1.6$ to $+3.6$).
+Math accuracy rises from 38.3\% at \ratio{10} to 41.7\% at \ratio{50}.
+Fit to human stories gets worse at every ratio we tested: 100 extra real stories lower the loss on human stories by 0.017 nats per token, while 5,000 synthetic stories raise it by 0.101.
+On a metric shared by all three tasks, the loss on real held-out references, every domain shows an interior optimum followed by degradation past \ratio{10}.
+
+{\bf Is mode collapse real in a single round of generation?} Yes, and it is our most robust finding.
+In a 3,000-example synthetic code pool, 44\% of task descriptions are exact duplicates and 79\% have a near-duplicate.
+In one math pool, 24\% of problems begin with the name ``Sarah''.
+The effective number of distinct examples in a synthetic pool saturates at roughly half the level of real data.
+Students inherit these modes: ``Sarah'' appears 171 times in 500 stories from a student trained at \ratio{30}, against 11 times after real-only training.
+
+In summary, our contributions are as follows:
+\begin{itemize}[leftmargin=*,itemsep=0pt,topsep=0pt]
+    \item We conduct a controlled dose--response study of the synthetic-to-real ratio (0 to \ratio{50}) across code, math, and creative writing with one teacher, one student, one real-set size, and an all-real control at matched size (117 fine-tuning runs).
+    \item We show that the ``80\% at \ratio{3}'' rule fails in every domain where it is defined, and that the behavior beyond \ratio{10} depends on both the domain and the metric: code accuracy plateaus, math accuracy keeps rising, and fidelity to real references degrades everywhere.
+    \item We measure generator mode collapse directly and trace it into student outputs, including a homogenization of story content that distinct-$n$ statistics miss.
+    \item We report an unexpected result: at equal training-set size, the \ratio{30} synthetic mix beats 3,100 real \gsm examples by 6.5 accuracy points (CI $+2.3$ to $+11.0$).
+\end{itemize}
+
+We review related work in \secref{sec:related}, describe the protocol in \secref{sec:method}, present results in \secref{sec:results}, and discuss implications and limitations in \secref{sec:discussion}.
+
+\begin{figure}[t]
+    \centering
+    \begin{tikzpicture}[
+        box/.style={draw, rounded corners=2pt, align=center, font=\footnotesize, inner sep=3pt, minimum height=0.9cm},
+        arr/.style={-{Stealth[length=2mm]}, thick},
+        node distance=0.5cm
+    ]
+        \node[box, fill=humanpurple] (real) {100 real\\examples};
+        \node[box, right=of real] (teacher) {Teacher (3B)\\3-shot, $T{=}1$};
+        \node[box, fill=aigreen, right=of teacher] (pool) {Synthetic pool\\(no de-duplication)};
+        \node[box, right=1.1cm of pool] (student) {Student (0.5B)\\LoRA fine-tune};
+        \node[box, fill=humanpurple, right=of student] (eval) {Real held-out\\test data};
+        \draw[arr] (real) -- (teacher);
+        \draw[arr] (teacher) -- (pool);
+        \draw[arr] (pool) -- node[above, font=\scriptsize] {$r{\times}100$} (student);
+        \draw[arr] (student) -- (eval);
+        \draw[arr] (real.south) -- ++(0,-0.45) -| node[pos=0.25, below, font=\scriptsize] {100 real examples, always included} (student.south);
+    \end{tikzpicture}
+    \caption{Protocol. A teacher sees three random real examples per request and writes one new example. We fine-tune a student on 100 real examples plus $r \times 100$ synthetic ones, for $r \in \{0, 1, 2, 3, 5, 10, 20, 30, 50\}$, and evaluate on real held-out data. We repeat this for code, math, and story writing with three seeds, each with its own real seed set and its own synthetic pool.}
+    \label{fig:pipeline}
+\end{figure}

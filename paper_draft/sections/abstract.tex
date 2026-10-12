@@ -1,0 +1,9 @@
+Practitioners routinely stretch a small real dataset with examples written by a stronger model, but how much to generate remains guesswork.
+We test a three-part hypothesis: gains are logarithmic with 80\% of the benefit reached at a \ratio{3} synthetic-to-real ratio, performance plateaus or degrades beyond \ratio{10} because the generator collapses onto a few modes, and code is the most resilient domain while creative writing degrades first.
+We run one protocol across code generation (\mbpp), math reasoning (\gsm), and story writing (\roc): a 3B teacher tops up 100 real examples at ratios from 0 to \ratio{50}, a 0.5B student is fine-tuned on the mix, and we evaluate on real held-out data over 117 runs with all-real controls.
+The hypothesis mostly fails.
+At \ratio{3} the student has 63\% of its maximum observed gain on code and 40\% on math.
+Code pass@1 saturates near \ratio{5}, math accuracy keeps rising to \ratio{50}, and fit to human stories worsens at every ratio.
+On a shared metric, loss on real references, all three domains degrade past \ratio{10}.
+Generator mode collapse is severe: 44\% of 3,000 synthetic code tasks are exact duplicates, and students inherit the teacher's modes.
+There is no single ceiling: the right ratio depends on whether the goal is a verifiable skill or fidelity to a human distribution.

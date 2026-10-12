@@ -1,0 +1,15 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+We measured how held-out performance on real data changes with the synthetic-to-real ratio across code, math, and story writing under one protocol.
+Synthetic data from a stronger model gave diminishing but not uniformly capped returns: code accuracy saturated near \ratio{5}, math accuracy kept improving to \ratio{50}, and fit to human stories got worse from the first synthetic example.
+The ``80\% at \ratio{3}'' rule did not hold, and ``beyond \ratio{10} hurts'' held for fidelity to real data in all three domains but for the task metric only in creative writing.
+Generator mode collapse is large and measurable after a single round of generation, and students inherit it.
+
+The main takeaway is that the right amount of synthetic data depends on what the student should learn: a skill that can be checked tolerates high ratios, while a human distribution that must be matched does not.
+
+Several follow-ups would sharpen these conclusions.
+A causal test with de-duplicated or diversity-prompted pools at fixed size would show whether mode collapse causes the code plateau.
+More seeds and full test sets at ratios from 5 to 100 would locate where, or whether, math accuracy turns over.
+Stronger teachers, other real-set sizes, compute-matched training, and human ratings of stories would test how far the pattern generalizes.
+One question remains open: why did synthetic math data beat the same amount of real data on accuracy?

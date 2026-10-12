@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage[final]{neurips_2025}  % NEURIPS style (neurips_2025.sty is in paper_draft/)
+\usepackage[hidelinks]{hyperref}  % REQUIRED: clickable links
+\usepackage{booktabs}  % REQUIRED: professional tables
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+
+% The style file only defines the footer track name when a track option is given;
+% define the main-track text here so that the mandated [final] option compiles.
+\makeatletter
+\providecommand{\@trackname}{\@neuripsordinal\ Conference on Neural Information Processing Systems (NeurIPS \@neuripsyear).}
+\makeatother
+
+% Additional packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+
+% Import command files
+\input{commands/math}
+\input{commands/general}
+\input{commands/macros}
+
+% Use this bibliography style:
+\bibliographystyle{plainnat}
+
+\title{No Single Ceiling: How the Synthetic-to-Real Ratio\\ Shapes Fine-Tuning on Code, Math, and Stories}
+
+\author{NeuriCo}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\input{sections/abstract}
+\end{abstract}
+
+\input{sections/introduction}
+\input{sections/related_work}
+\input{sections/methodology}
+\input{sections/results}
+\input{sections/discussion}
+\input{sections/conclusion}
+
+\bibliography{references}
+
+\appendix
+\input{appendix/details}
+
+\end{document}

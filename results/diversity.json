@@ -1,0 +1,1594 @@
+{
+ "stats": {
+  "mbpp|synth|0": {
+   "100": {
+    "exact_dup_rate": 0.09999999999999998,
+    "key_dup_rate": 0.33999999999999997,
+    "top10_key_share": 0.41,
+    "near_dup_rate": 0.37,
+    "distinct2": 0.30246452576549665,
+    "unique_bigrams": 405,
+    "vendi": 16.949855281847473,
+    "test_coverage": 0.6051411032676697
+   },
+   "200": {
+    "exact_dup_rate": 0.19499999999999995,
+    "key_dup_rate": 0.42500000000000004,
+    "top10_key_share": 0.38,
+    "near_dup_rate": 0.425,
+    "distinct2": 0.25833034754568257,
+    "unique_bigrams": 721,
+    "vendi": 19.34927912700003,
+    "test_coverage": 0.6362361907958984
+   },
+   "300": {
+    "exact_dup_rate": 0.23333333333333328,
+    "key_dup_rate": 0.4966666666666667,
+    "top10_key_share": 0.4,
+    "near_dup_rate": 0.5,
+    "distinct2": 0.20707670387081453,
+    "unique_bigrams": 872,
+    "vendi": 19.77385409830545,
+    "test_coverage": 0.656319260597229
+   },
+   "500": {
+    "exact_dup_rate": 0.274,
+    "key_dup_rate": 0.556,
+    "top10_key_share": 0.384,
+    "near_dup_rate": 0.574,
+    "distinct2": 0.16581632653061223,
+    "unique_bigrams": 1170,
+    "vendi": 21.026012036146433,
+    "test_coverage": 0.6762861609458923
+   },
+   "1000": {
+    "exact_dup_rate": 0.33899999999999997,
+    "key_dup_rate": 0.631,
+    "top10_key_share": 0.359,
+    "near_dup_rate": 0.666,
+    "distinct2": 0.1236670821215898,
+    "unique_bigrams": 1786,
+    "vendi": 22.148948746738814,
+    "test_coverage": 0.6989752054214478
+   },
+   "2000": {
+    "exact_dup_rate": 0.403,
+    "key_dup_rate": 0.7070000000000001,
+    "top10_key_share": 0.3565,
+    "near_dup_rate": 0.749,
+    "distinct2": 0.08873566404490489,
+    "unique_bigrams": 2561,
+    "vendi": 22.398983541546464,
+    "test_coverage": 0.7265804409980774
+   },
+   "3000": {
+    "exact_dup_rate": 0.43833333333333335,
+    "key_dup_rate": 0.7463333333333333,
+    "top10_key_share": 0.3416666666666667,
+    "near_dup_rate": 0.788,
+    "distinct2": 0.07365850286846531,
+    "unique_bigrams": 3197,
+    "vendi": 23.15942515176434,
+    "test_coverage": 0.7393679022789001
+   }
+  },
+  "mbpp|real|0": {
+   "100": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.020000000000000018,
+    "top10_key_share": 0.12,
+    "near_dup_rate": 0.01,
+    "distinct2": 0.46253602305475505,
+    "unique_bigrams": 642,
+    "vendi": 26.394385067725025,
+    "test_coverage": 0.6718488931655884
+   },
+   "200": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.040000000000000036,
+    "top10_key_share": 0.09,
+    "near_dup_rate": 0.03,
+    "distinct2": 0.4073275862068966,
+    "unique_bigrams": 1134,
+    "vendi": 34.3617054435014,
+    "test_coverage": 0.7098327279090881
+   },
+   "300": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.043333333333333335,
+    "top10_key_share": 0.07333333333333333,
+    "near_dup_rate": 0.05,
+    "distinct2": 0.3730544747081712,
+    "unique_bigrams": 1534,
+    "vendi": 36.88057885413192,
+    "test_coverage": 0.7346212863922119
+   }
+  },
+  "mbpp|synth|1": {
+   "100": {
+    "exact_dup_rate": 0.16000000000000003,
+    "key_dup_rate": 0.32999999999999996,
+    "top10_key_share": 0.42,
+    "near_dup_rate": 0.3,
+    "distinct2": 0.29301655867530596,
+    "unique_bigrams": 407,
+    "vendi": 16.74017776884207,
+    "test_coverage": 0.6102721095085144
+   },
+   "200": {
+    "exact_dup_rate": 0.18999999999999995,
+    "key_dup_rate": 0.42500000000000004,
+    "top10_key_share": 0.385,
+    "near_dup_rate": 0.405,
+    "distinct2": 0.24004267425320056,
+    "unique_bigrams": 675,
+    "vendi": 19.400731617404336,
+    "test_coverage": 0.6413590312004089
+   },
+   "300": {
+    "exact_dup_rate": 0.19333333333333336,
+    "key_dup_rate": 0.45999999999999996,
+    "top10_key_share": 0.36666666666666664,
+    "near_dup_rate": 0.47,
+    "distinct2": 0.2063380281690141,
+    "unique_bigrams": 879,
+    "vendi": 20.795748637730743,
+    "test_coverage": 0.6588314771652222
+   },
+   "500": {
+    "exact_dup_rate": 0.24,
+    "key_dup_rate": 0.528,
+    "top10_key_share": 0.342,
+    "near_dup_rate": 0.55,
+    "distinct2": 0.171724333522405,
+    "unique_bigrams": 1211,
+    "vendi": 22.973193373671222,
+    "test_coverage": 0.6915807127952576
+   },
+   "1000": {
+    "exact_dup_rate": 0.33699999999999997,
+    "key_dup_rate": 0.636,
+    "top10_key_share": 0.361,
+    "near_dup_rate": 0.658,
+    "distinct2": 0.12679579729826318,
+    "unique_bigrams": 1774,
+    "vendi": 23.019716477632812,
+    "test_coverage": 0.7145364880561829
+   },
+   "2000": {
+    "exact_dup_rate": 0.41300000000000003,
+    "key_dup_rate": 0.7085,
+    "top10_key_share": 0.356,
+    "near_dup_rate": 0.742,
+    "distinct2": 0.09111221449851042,
+    "unique_bigrams": 2569,
+    "vendi": 23.06933261688671,
+    "test_coverage": 0.737826406955719
+   },
+   "3000": {
+    "exact_dup_rate": 0.44533333333333336,
+    "key_dup_rate": 0.746,
+    "top10_key_share": 0.3506666666666667,
+    "near_dup_rate": 0.7893333333333333,
+    "distinct2": 0.07558865816579065,
+    "unique_bigrams": 3207,
+    "vendi": 23.343805510558433,
+    "test_coverage": 0.7515067458152771
+   }
+  },
+  "mbpp|real|1": {
+   "100": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.030000000000000027,
+    "top10_key_share": 0.13,
+    "near_dup_rate": 0.01,
+    "distinct2": 0.48396946564885496,
+    "unique_bigrams": 634,
+    "vendi": 28.784207962464535,
+    "test_coverage": 0.6698121428489685
+   },
+   "200": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.020000000000000018,
+    "top10_key_share": 0.07,
+    "near_dup_rate": 0.02,
+    "distinct2": 0.40876732858748593,
+    "unique_bigrams": 1091,
+    "vendi": 34.58931097242856,
+    "test_coverage": 0.7116537094116211
+   },
+   "300": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.036666666666666625,
+    "top10_key_share": 0.06666666666666667,
+    "near_dup_rate": 0.05,
+    "distinct2": 0.37454100367197063,
+    "unique_bigrams": 1530,
+    "vendi": 37.171780700184044,
+    "test_coverage": 0.7358021140098572
+   }
+  },
+  "mbpp|synth|2": {
+   "100": {
+    "exact_dup_rate": 0.16000000000000003,
+    "key_dup_rate": 0.33999999999999997,
+    "top10_key_share": 0.39,
+    "near_dup_rate": 0.4,
+    "distinct2": 0.3085553997194951,
+    "unique_bigrams": 440,
+    "vendi": 16.38903480016985,
+    "test_coverage": 0.5997129678726196
+   },
+   "200": {
+    "exact_dup_rate": 0.21499999999999997,
+    "key_dup_rate": 0.395,
+    "top10_key_share": 0.38,
+    "near_dup_rate": 0.465,
+    "distinct2": 0.24549237170596394,
+    "unique_bigrams": 708,
+    "vendi": 18.472162749885207,
+    "test_coverage": 0.6349757313728333
+   },
+   "300": {
+    "exact_dup_rate": 0.23333333333333328,
+    "key_dup_rate": 0.44666666666666666,
+    "top10_key_share": 0.36333333333333334,
+    "near_dup_rate": 0.5033333333333333,
+    "distinct2": 0.21993047508690614,
+    "unique_bigrams": 949,
+    "vendi": 20.04612024781551,
+    "test_coverage": 0.655387818813324
+   },
+   "500": {
+    "exact_dup_rate": 0.252,
+    "key_dup_rate": 0.536,
+    "top10_key_share": 0.362,
+    "near_dup_rate": 0.586,
+    "distinct2": 0.17580756013745705,
+    "unique_bigrams": 1279,
+    "vendi": 21.57282104594658,
+    "test_coverage": 0.67743980884552
+   },
+   "1000": {
+    "exact_dup_rate": 0.34099999999999997,
+    "key_dup_rate": 0.631,
+    "top10_key_share": 0.358,
+    "near_dup_rate": 0.68,
+    "distinct2": 0.12488643511076944,
+    "unique_bigrams": 1787,
+    "vendi": 22.207044384974335,
+    "test_coverage": 0.7047190070152283
+   },
+   "2000": {
+    "exact_dup_rate": 0.39749999999999996,
+    "key_dup_rate": 0.69,
+    "top10_key_share": 0.3585,
+    "near_dup_rate": 0.746,
+    "distinct2": 0.09415674328440875,
+    "unique_bigrams": 2720,
+    "vendi": 22.86709817728844,
+    "test_coverage": 0.7334847450256348
+   },
+   "3000": {
+    "exact_dup_rate": 0.43400000000000005,
+    "key_dup_rate": 0.7336666666666667,
+    "top10_key_share": 0.359,
+    "near_dup_rate": 0.7876666666666666,
+    "distinct2": 0.07726071469608181,
+    "unique_bigrams": 3362,
+    "vendi": 22.663101352072786,
+    "test_coverage": 0.7447425723075867
+   }
+  },
+  "mbpp|real|2": {
+   "100": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.010000000000000009,
+    "top10_key_share": 0.11,
+    "near_dup_rate": 0.03,
+    "distinct2": 0.47240618101545256,
+    "unique_bigrams": 642,
+    "vendi": 26.887219402434056,
+    "test_coverage": 0.6631292700767517
+   },
+   "200": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.015000000000000013,
+    "top10_key_share": 0.065,
+    "near_dup_rate": 0.025,
+    "distinct2": 0.40920810313075506,
+    "unique_bigrams": 1111,
+    "vendi": 34.10715626660654,
+    "test_coverage": 0.7125274538993835
+   },
+   "300": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.033333333333333326,
+    "top10_key_share": 0.06666666666666667,
+    "near_dup_rate": 0.04666666666666667,
+    "distinct2": 0.37205918020858597,
+    "unique_bigrams": 1534,
+    "vendi": 36.9593770034254,
+    "test_coverage": 0.7376712560653687
+   }
+  },
+  "gsm8k|synth|0": {
+   "100": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.8,
+    "top10_key_share": 0.88,
+    "near_dup_rate": 0.01,
+    "distinct2": 0.5983431320149653,
+    "unique_bigrams": 2239,
+    "vendi": 16.17342815620676,
+    "test_coverage": 0.5568282008171082
+   },
+   "200": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.845,
+    "top10_key_share": 0.845,
+    "near_dup_rate": 0.025,
+    "distinct2": 0.48614474038202854,
+    "unique_bigrams": 3614,
+    "vendi": 17.484905949785624,
+    "test_coverage": 0.577522337436676
+   },
+   "300": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.8866666666666667,
+    "top10_key_share": 0.8533333333333334,
+    "near_dup_rate": 0.06,
+    "distinct2": 0.4256606459649435,
+    "unique_bigrams": 4784,
+    "vendi": 18.173428309017414,
+    "test_coverage": 0.5884299278259277
+   },
+   "500": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.922,
+    "top10_key_share": 0.844,
+    "near_dup_rate": 0.11,
+    "distinct2": 0.35511440471682804,
+    "unique_bigrams": 6565,
+    "vendi": 18.92428469413443,
+    "test_coverage": 0.5974973440170288
+   },
+   "1000": {
+    "exact_dup_rate": 0.0020000000000000018,
+    "key_dup_rate": 0.953,
+    "top10_key_share": 0.841,
+    "near_dup_rate": 0.153,
+    "distinct2": 0.2796798697775366,
+    "unique_bigrams": 10309,
+    "vendi": 19.693057533973843,
+    "test_coverage": 0.6122263073921204
+   },
+   "2000": {
+    "exact_dup_rate": 0.0034999999999999476,
+    "key_dup_rate": 0.9725,
+    "top10_key_share": 0.849,
+    "near_dup_rate": 0.231,
+    "distinct2": 0.21088573360378635,
+    "unique_bigrams": 15595,
+    "vendi": 19.693876602336893,
+    "test_coverage": 0.632826566696167
+   },
+   "3000": {
+    "exact_dup_rate": 0.0023333333333332984,
+    "key_dup_rate": 0.9803333333333333,
+    "top10_key_share": 0.8556666666666667,
+    "near_dup_rate": 0.26766666666666666,
+    "distinct2": 0.17917941335252835,
+    "unique_bigrams": 19914,
+    "vendi": 19.82453739837123,
+    "test_coverage": 0.6403402090072632
+   },
+   "5000": {
+    "exact_dup_rate": 0.0028000000000000247,
+    "key_dup_rate": 0.986,
+    "top10_key_share": 0.8586,
+    "near_dup_rate": 0.327,
+    "distinct2": 0.14334446927131916,
+    "unique_bigrams": 26431,
+    "vendi": 19.945546784758832,
+    "test_coverage": 0.6522536277770996
+   }
+  },
+  "gsm8k|real|0": {
+   "100": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.26,
+    "top10_key_share": 0.36,
+    "near_dup_rate": 0.0,
+    "distinct2": 0.7692835889219501,
+    "unique_bigrams": 3361,
+    "vendi": 28.254334809711096,
+    "test_coverage": 0.5693411827087402
+   },
+   "200": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.30500000000000005,
+    "top10_key_share": 0.285,
+    "near_dup_rate": 0.0,
+    "distinct2": 0.7169302870533099,
+    "unique_bigrams": 6119,
+    "vendi": 37.09780221334761,
+    "test_coverage": 0.5981529355049133
+   },
+   "300": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.36,
+    "top10_key_share": 0.25666666666666665,
+    "near_dup_rate": 0.0,
+    "distinct2": 0.6764022311744654,
+    "unique_bigrams": 8731,
+    "vendi": 39.143150369724275,
+    "test_coverage": 0.6167153120040894
+   },
+   "500": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.394,
+    "top10_key_share": 0.244,
+    "near_dup_rate": 0.0,
+    "distinct2": 0.6261481515331536,
+    "unique_bigrams": 13702,
+    "vendi": 43.10008822738251,
+    "test_coverage": 0.631562352180481
+   },
+   "1000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.491,
+    "top10_key_share": 0.252,
+    "near_dup_rate": 0.0,
+    "distinct2": 0.5547547860234727,
+    "unique_bigrams": 24863,
+    "vendi": 45.33342063439123,
+    "test_coverage": 0.6519797444343567
+   },
+   "2000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.5800000000000001,
+    "top10_key_share": 0.2365,
+    "near_dup_rate": 0.0025,
+    "distinct2": 0.4812522030313712,
+    "unique_bigrams": 43690,
+    "vendi": 47.4822166676521,
+    "test_coverage": 0.6707421541213989
+   },
+   "3000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.6356666666666666,
+    "top10_key_share": 0.24166666666666667,
+    "near_dup_rate": 0.0036666666666666666,
+    "distinct2": 0.44164197866662747,
+    "unique_bigrams": 60077,
+    "vendi": 48.524038399085775,
+    "test_coverage": 0.6819647550582886
+   },
+   "5000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.7008,
+    "top10_key_share": 0.2428,
+    "near_dup_rate": 0.0044,
+    "distinct2": 0.3935185802773813,
+    "unique_bigrams": 88498,
+    "vendi": 49.48916473002931,
+    "test_coverage": 0.6953751444816589
+   }
+  },
+  "gsm8k|synth|1": {
+   "100": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.8200000000000001,
+    "top10_key_share": 0.9,
+    "near_dup_rate": 0.01,
+    "distinct2": 0.590418531192419,
+    "unique_bigrams": 2243,
+    "vendi": 14.816640240925627,
+    "test_coverage": 0.5621621608734131
+   },
+   "200": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.88,
+    "top10_key_share": 0.885,
+    "near_dup_rate": 0.03,
+    "distinct2": 0.4866337918505061,
+    "unique_bigrams": 3750,
+    "vendi": 17.1421352270338,
+    "test_coverage": 0.5830259323120117
+   },
+   "300": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.8933333333333333,
+    "top10_key_share": 0.86,
+    "near_dup_rate": 0.04666666666666667,
+    "distinct2": 0.4337189790691513,
+    "unique_bigrams": 4911,
+    "vendi": 18.251132482954656,
+    "test_coverage": 0.5921196937561035
+   },
+   "500": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.926,
+    "top10_key_share": 0.862,
+    "near_dup_rate": 0.078,
+    "distinct2": 0.35980319542905514,
+    "unique_bigrams": 6801,
+    "vendi": 18.23615315034258,
+    "test_coverage": 0.6038050055503845
+   },
+   "1000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.957,
+    "top10_key_share": 0.842,
+    "near_dup_rate": 0.11,
+    "distinct2": 0.28327892636924196,
+    "unique_bigrams": 10934,
+    "vendi": 19.229442033907013,
+    "test_coverage": 0.6191046237945557
+   },
+   "2000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.973,
+    "top10_key_share": 0.8465,
+    "near_dup_rate": 0.1815,
+    "distinct2": 0.2189614800710187,
+    "unique_bigrams": 17019,
+    "vendi": 19.92315357725239,
+    "test_coverage": 0.635444164276123
+   },
+   "3000": {
+    "exact_dup_rate": 0.0003333333333332966,
+    "key_dup_rate": 0.98,
+    "top10_key_share": 0.841,
+    "near_dup_rate": 0.22333333333333333,
+    "distinct2": 0.18712278831439036,
+    "unique_bigrams": 21765,
+    "vendi": 20.27180897377971,
+    "test_coverage": 0.6432458758354187
+   },
+   "5000": {
+    "exact_dup_rate": 0.0008000000000000229,
+    "key_dup_rate": 0.9866,
+    "top10_key_share": 0.8458,
+    "near_dup_rate": 0.2866,
+    "distinct2": 0.149313096816463,
+    "unique_bigrams": 28943,
+    "vendi": 20.139461830723235,
+    "test_coverage": 0.65702885389328
+   }
+  },
+  "gsm8k|real|1": {
+   "100": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.16000000000000003,
+    "top10_key_share": 0.25,
+    "near_dup_rate": 0.0,
+    "distinct2": 0.7670299727520435,
+    "unique_bigrams": 3378,
+    "vendi": 25.703742402044632,
+    "test_coverage": 0.5799984335899353
+   },
+   "200": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.255,
+    "top10_key_share": 0.235,
+    "near_dup_rate": 0.0,
+    "distinct2": 0.7091615769017212,
+    "unique_bigrams": 6386,
+    "vendi": 36.37123981600171,
+    "test_coverage": 0.6011896133422852
+   },
+   "300": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.33999999999999997,
+    "top10_key_share": 0.25666666666666665,
+    "near_dup_rate": 0.0,
+    "distinct2": 0.6735770273240056,
+    "unique_bigrams": 9195,
+    "vendi": 40.26447384590149,
+    "test_coverage": 0.6167076230049133
+   },
+   "500": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.388,
+    "top10_key_share": 0.234,
+    "near_dup_rate": 0.0,
+    "distinct2": 0.6221114030010241,
+    "unique_bigrams": 13972,
+    "vendi": 43.556134277856586,
+    "test_coverage": 0.6319237947463989
+   },
+   "1000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.49,
+    "top10_key_share": 0.252,
+    "near_dup_rate": 0.0,
+    "distinct2": 0.5531109586312225,
+    "unique_bigrams": 24989,
+    "vendi": 46.24380067520401,
+    "test_coverage": 0.6523722410202026
+   },
+   "2000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.5780000000000001,
+    "top10_key_share": 0.2595,
+    "near_dup_rate": 0.001,
+    "distinct2": 0.4838452288639403,
+    "unique_bigrams": 43054,
+    "vendi": 48.22633423954994,
+    "test_coverage": 0.6705064177513123
+   },
+   "3000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.6346666666666667,
+    "top10_key_share": 0.24833333333333332,
+    "near_dup_rate": 0.0013333333333333333,
+    "distinct2": 0.44161349337378963,
+    "unique_bigrams": 59382,
+    "vendi": 49.06633520306895,
+    "test_coverage": 0.6827223896980286
+   },
+   "5000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.6970000000000001,
+    "top10_key_share": 0.2426,
+    "near_dup_rate": 0.0032,
+    "distinct2": 0.39368830671552413,
+    "unique_bigrams": 88422,
+    "vendi": 49.56544813679254,
+    "test_coverage": 0.6955578327178955
+   }
+  },
+  "gsm8k|synth|2": {
+   "100": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.79,
+    "top10_key_share": 0.88,
+    "near_dup_rate": 0.0,
+    "distinct2": 0.5384018619084562,
+    "unique_bigrams": 2082,
+    "vendi": 14.059568289696378,
+    "test_coverage": 0.5521407723426819
+   },
+   "200": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.875,
+    "top10_key_share": 0.84,
+    "near_dup_rate": 0.035,
+    "distinct2": 0.46728476821192055,
+    "unique_bigrams": 3528,
+    "vendi": 16.603986924462937,
+    "test_coverage": 0.5734347105026245
+   },
+   "300": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.9033333333333333,
+    "top10_key_share": 0.84,
+    "near_dup_rate": 0.056666666666666664,
+    "distinct2": 0.4213751464359737,
+    "unique_bigrams": 4676,
+    "vendi": 17.274728036704225,
+    "test_coverage": 0.5827176570892334
+   },
+   "500": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.94,
+    "top10_key_share": 0.852,
+    "near_dup_rate": 0.07,
+    "distinct2": 0.35577235772357724,
+    "unique_bigrams": 6564,
+    "vendi": 18.7376244202234,
+    "test_coverage": 0.5956742763519287
+   },
+   "1000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.959,
+    "top10_key_share": 0.866,
+    "near_dup_rate": 0.127,
+    "distinct2": 0.280600150845814,
+    "unique_bigrams": 10417,
+    "vendi": 19.479355987334227,
+    "test_coverage": 0.6109055280685425
+   },
+   "2000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.9755,
+    "top10_key_share": 0.8605,
+    "near_dup_rate": 0.2035,
+    "distinct2": 0.21261287815857874,
+    "unique_bigrams": 15869,
+    "vendi": 19.595816299511533,
+    "test_coverage": 0.6288041472434998
+   },
+   "3000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.9816666666666667,
+    "top10_key_share": 0.8633333333333333,
+    "near_dup_rate": 0.242,
+    "distinct2": 0.17919677784411395,
+    "unique_bigrams": 20110,
+    "vendi": 19.740019811186805,
+    "test_coverage": 0.6366751790046692
+   },
+   "5000": {
+    "exact_dup_rate": 0.0010000000000000009,
+    "key_dup_rate": 0.987,
+    "top10_key_share": 0.8668,
+    "near_dup_rate": 0.3038,
+    "distinct2": 0.14437151331498752,
+    "unique_bigrams": 26966,
+    "vendi": 19.670836265843146,
+    "test_coverage": 0.6470729112625122
+   }
+  },
+  "gsm8k|real|2": {
+   "100": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.26,
+    "top10_key_share": 0.35,
+    "near_dup_rate": 0.0,
+    "distinct2": 0.7664029781293625,
+    "unique_bigrams": 3294,
+    "vendi": 26.57738401940764,
+    "test_coverage": 0.5688415765762329
+   },
+   "200": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.31499999999999995,
+    "top10_key_share": 0.285,
+    "near_dup_rate": 0.005,
+    "distinct2": 0.7076992447300192,
+    "unique_bigrams": 6278,
+    "vendi": 35.43751114372768,
+    "test_coverage": 0.5957005620002747
+   },
+   "300": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.3766666666666667,
+    "top10_key_share": 0.28,
+    "near_dup_rate": 0.0033333333333333335,
+    "distinct2": 0.6714158504007124,
+    "unique_bigrams": 9048,
+    "vendi": 39.470381970653236,
+    "test_coverage": 0.6115896701812744
+   },
+   "500": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.43400000000000005,
+    "top10_key_share": 0.27,
+    "near_dup_rate": 0.002,
+    "distinct2": 0.6228819365151861,
+    "unique_bigrams": 13638,
+    "vendi": 44.35949897846607,
+    "test_coverage": 0.6262979507446289
+   },
+   "1000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.503,
+    "top10_key_share": 0.253,
+    "near_dup_rate": 0.001,
+    "distinct2": 0.554969913586391,
+    "unique_bigrams": 24533,
+    "vendi": 47.61497439007477,
+    "test_coverage": 0.649655282497406
+   },
+   "2000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.6005,
+    "top10_key_share": 0.2585,
+    "near_dup_rate": 0.0015,
+    "distinct2": 0.48635865554487107,
+    "unique_bigrams": 43497,
+    "vendi": 49.34448909351543,
+    "test_coverage": 0.670550525188446
+   },
+   "3000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.643,
+    "top10_key_share": 0.25166666666666665,
+    "near_dup_rate": 0.0016666666666666668,
+    "distinct2": 0.4460876159885796,
+    "unique_bigrams": 59997,
+    "vendi": 49.793954684847535,
+    "test_coverage": 0.6813583970069885
+   },
+   "5000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.6981999999999999,
+    "top10_key_share": 0.2476,
+    "near_dup_rate": 0.0048,
+    "distinct2": 0.3940897932903191,
+    "unique_bigrams": 88137,
+    "vendi": 49.76491528825195,
+    "test_coverage": 0.6949347853660583
+   }
+  },
+  "roc|synth|0": {
+   "100": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.14,
+    "top10_key_share": 0.23,
+    "near_dup_rate": 0.01,
+    "distinct2": 0.7388570371740336,
+    "unique_bigrams": 3995,
+    "vendi": 23.373713917993474,
+    "test_coverage": 0.4489940106868744
+   },
+   "200": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.18500000000000005,
+    "top10_key_share": 0.19,
+    "near_dup_rate": 0.015,
+    "distinct2": 0.6692582090917406,
+    "unique_bigrams": 7317,
+    "vendi": 31.167078942772235,
+    "test_coverage": 0.4712387025356293
+   },
+   "300": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.2633333333333333,
+    "top10_key_share": 0.19666666666666666,
+    "near_dup_rate": 0.013333333333333334,
+    "distinct2": 0.6224143254090769,
+    "unique_bigrams": 10080,
+    "vendi": 33.74667606933266,
+    "test_coverage": 0.48254266381263733
+   },
+   "500": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.32399999999999995,
+    "top10_key_share": 0.194,
+    "near_dup_rate": 0.03,
+    "distinct2": 0.5575922070196312,
+    "unique_bigrams": 14997,
+    "vendi": 36.75707798413225,
+    "test_coverage": 0.5005033612251282
+   },
+   "1000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.42000000000000004,
+    "top10_key_share": 0.195,
+    "near_dup_rate": 0.052,
+    "distinct2": 0.47318322923289824,
+    "unique_bigrams": 25303,
+    "vendi": 39.719344813327226,
+    "test_coverage": 0.5175566673278809
+   },
+   "2000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.49750000000000005,
+    "top10_key_share": 0.1975,
+    "near_dup_rate": 0.0645,
+    "distinct2": 0.3958962656765831,
+    "unique_bigrams": 42332,
+    "vendi": 41.59297064056248,
+    "test_coverage": 0.5378931164741516
+   },
+   "3000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.5293333333333333,
+    "top10_key_share": 0.18566666666666667,
+    "near_dup_rate": 0.07266666666666667,
+    "distinct2": 0.3540766797387246,
+    "unique_bigrams": 56972,
+    "vendi": 42.97517610799492,
+    "test_coverage": 0.549683690071106
+   },
+   "5000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.5736,
+    "top10_key_share": 0.1888,
+    "near_dup_rate": 0.0902,
+    "distinct2": 0.30338964048135136,
+    "unique_bigrams": 81181,
+    "vendi": 43.5012679365749,
+    "test_coverage": 0.5641540288925171
+   }
+  },
+  "roc|real|0": {
+   "100": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.0,
+    "top10_key_share": 0.1,
+    "near_dup_rate": 0.0,
+    "distinct2": 0.8047091412742382,
+    "unique_bigrams": 3486,
+    "vendi": 41.85590000016264,
+    "test_coverage": 0.4770200848579407
+   },
+   "200": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.0,
+    "top10_key_share": 0.05,
+    "near_dup_rate": 0.0,
+    "distinct2": 0.7379225705678902,
+    "unique_bigrams": 6614,
+    "vendi": 58.471013927700405,
+    "test_coverage": 0.5018116235733032
+   },
+   "300": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.010000000000000009,
+    "top10_key_share": 0.043333333333333335,
+    "near_dup_rate": 0.0,
+    "distinct2": 0.697306220454716,
+    "unique_bigrams": 9293,
+    "vendi": 66.12472322520148,
+    "test_coverage": 0.5166361331939697
+   },
+   "500": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.016000000000000014,
+    "top10_key_share": 0.036,
+    "near_dup_rate": 0.0,
+    "distinct2": 0.6470270756499056,
+    "unique_bigrams": 14386,
+    "vendi": 74.13787061244325,
+    "test_coverage": 0.5389190912246704
+   },
+   "1000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.020000000000000018,
+    "top10_key_share": 0.022,
+    "near_dup_rate": 0.0,
+    "distinct2": 0.5812626832018039,
+    "unique_bigrams": 25779,
+    "vendi": 80.19422343435585,
+    "test_coverage": 0.5654687285423279
+   },
+   "2000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.04349999999999998,
+    "top10_key_share": 0.016,
+    "near_dup_rate": 0.0,
+    "distinct2": 0.5075677380121174,
+    "unique_bigrams": 45071,
+    "vendi": 84.99129460367323,
+    "test_coverage": 0.5890034437179565
+   },
+   "3000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.05933333333333335,
+    "top10_key_share": 0.013,
+    "near_dup_rate": 0.0003333333333333333,
+    "distinct2": 0.46627347298488236,
+    "unique_bigrams": 61902,
+    "vendi": 86.27390288135182,
+    "test_coverage": 0.6026645302772522
+   },
+   "5000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.09199999999999997,
+    "top10_key_share": 0.0108,
+    "near_dup_rate": 0.0006,
+    "distinct2": 0.4142708897310955,
+    "unique_bigrams": 91819,
+    "vendi": 86.94133282524717,
+    "test_coverage": 0.6211310029029846
+   }
+  },
+  "roc|synth|1": {
+   "100": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.22999999999999998,
+    "top10_key_share": 0.33,
+    "near_dup_rate": 0.01,
+    "distinct2": 0.7277280858676207,
+    "unique_bigrams": 4068,
+    "vendi": 22.67498726394096,
+    "test_coverage": 0.43767064809799194
+   },
+   "200": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.27,
+    "top10_key_share": 0.245,
+    "near_dup_rate": 0.005,
+    "distinct2": 0.6510810810810811,
+    "unique_bigrams": 7227,
+    "vendi": 29.728109593534036,
+    "test_coverage": 0.4643097519874573
+   },
+   "300": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.29333333333333333,
+    "top10_key_share": 0.22333333333333333,
+    "near_dup_rate": 0.006666666666666667,
+    "distinct2": 0.6084223375038145,
+    "unique_bigrams": 9969,
+    "vendi": 33.934416142622545,
+    "test_coverage": 0.47650617361068726
+   },
+   "500": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.354,
+    "top10_key_share": 0.238,
+    "near_dup_rate": 0.02,
+    "distinct2": 0.543082858717619,
+    "unique_bigrams": 14780,
+    "vendi": 36.58128167600877,
+    "test_coverage": 0.4912458062171936
+   },
+   "1000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.44299999999999995,
+    "top10_key_share": 0.236,
+    "near_dup_rate": 0.054,
+    "distinct2": 0.4607568129887983,
+    "unique_bigrams": 24803,
+    "vendi": 38.394205452808094,
+    "test_coverage": 0.5136705040931702
+   },
+   "2000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.511,
+    "top10_key_share": 0.229,
+    "near_dup_rate": 0.08,
+    "distinct2": 0.3833965632671279,
+    "unique_bigrams": 41232,
+    "vendi": 40.3737663006622,
+    "test_coverage": 0.5328589081764221
+   },
+   "3000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.5566666666666666,
+    "top10_key_share": 0.22866666666666666,
+    "near_dup_rate": 0.09866666666666667,
+    "distinct2": 0.34088417296935686,
+    "unique_bigrams": 55032,
+    "vendi": 41.11184134550039,
+    "test_coverage": 0.5439349412918091
+   },
+   "5000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.6012,
+    "top10_key_share": 0.224,
+    "near_dup_rate": 0.127,
+    "distinct2": 0.2905784620866802,
+    "unique_bigrams": 78283,
+    "vendi": 41.397740065812684,
+    "test_coverage": 0.5604832172393799
+   }
+  },
+  "roc|real|1": {
+   "100": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.0,
+    "top10_key_share": 0.1,
+    "near_dup_rate": 0.0,
+    "distinct2": 0.7973497829563628,
+    "unique_bigrams": 3490,
+    "vendi": 40.48930959794582,
+    "test_coverage": 0.47823357582092285
+   },
+   "200": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.0,
+    "top10_key_share": 0.05,
+    "near_dup_rate": 0.0,
+    "distinct2": 0.7384013415315819,
+    "unique_bigrams": 6605,
+    "vendi": 55.92796738889519,
+    "test_coverage": 0.506308376789093
+   },
+   "300": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.0033333333333332993,
+    "top10_key_share": 0.03666666666666667,
+    "near_dup_rate": 0.0,
+    "distinct2": 0.6980726464047442,
+    "unique_bigrams": 9417,
+    "vendi": 63.12069843961475,
+    "test_coverage": 0.5229959487915039
+   },
+   "500": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.008000000000000007,
+    "top10_key_share": 0.028,
+    "near_dup_rate": 0.0,
+    "distinct2": 0.6466795038287583,
+    "unique_bigrams": 14441,
+    "vendi": 73.90880763116523,
+    "test_coverage": 0.5400636196136475
+   },
+   "1000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.02400000000000002,
+    "top10_key_share": 0.023,
+    "near_dup_rate": 0.0,
+    "distinct2": 0.5741271904271052,
+    "unique_bigrams": 25621,
+    "vendi": 81.01655649319446,
+    "test_coverage": 0.5650855898857117
+   },
+   "2000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.04149999999999998,
+    "top10_key_share": 0.014,
+    "near_dup_rate": 0.0,
+    "distinct2": 0.508180304257809,
+    "unique_bigrams": 45163,
+    "vendi": 84.69789791744132,
+    "test_coverage": 0.5904937982559204
+   },
+   "3000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.06499999999999995,
+    "top10_key_share": 0.013666666666666667,
+    "near_dup_rate": 0.0,
+    "distinct2": 0.4649624758452297,
+    "unique_bigrams": 62079,
+    "vendi": 85.67597347320259,
+    "test_coverage": 0.6054043769836426
+   },
+   "5000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.09940000000000004,
+    "top10_key_share": 0.012,
+    "near_dup_rate": 0.0002,
+    "distinct2": 0.4148929940494691,
+    "unique_bigrams": 92105,
+    "vendi": 86.78152716417779,
+    "test_coverage": 0.6244123578071594
+   }
+  },
+  "roc|synth|2": {
+   "100": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.18999999999999995,
+    "top10_key_share": 0.29,
+    "near_dup_rate": 0.0,
+    "distinct2": 0.7680745814307458,
+    "unique_bigrams": 4037,
+    "vendi": 26.95366772703734,
+    "test_coverage": 0.44607013463974
+   },
+   "200": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.275,
+    "top10_key_share": 0.27,
+    "near_dup_rate": 0.01,
+    "distinct2": 0.6829106108102974,
+    "unique_bigrams": 7189,
+    "vendi": 32.237297190860026,
+    "test_coverage": 0.46565961837768555
+   },
+   "300": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.30666666666666664,
+    "top10_key_share": 0.23333333333333334,
+    "near_dup_rate": 0.016666666666666666,
+    "distinct2": 0.6305437233775996,
+    "unique_bigrams": 10066,
+    "vendi": 34.49360860968162,
+    "test_coverage": 0.47979333996772766
+   },
+   "500": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.352,
+    "top10_key_share": 0.212,
+    "near_dup_rate": 0.022,
+    "distinct2": 0.567532615724012,
+    "unique_bigrams": 14921,
+    "vendi": 36.99814441380951,
+    "test_coverage": 0.4966670870780945
+   },
+   "1000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.41200000000000003,
+    "top10_key_share": 0.21,
+    "near_dup_rate": 0.035,
+    "distinct2": 0.4855343997869629,
+    "unique_bigrams": 25526,
+    "vendi": 40.43877236588332,
+    "test_coverage": 0.5179088115692139
+   },
+   "2000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.49550000000000005,
+    "top10_key_share": 0.2095,
+    "near_dup_rate": 0.06,
+    "distinct2": 0.4042122855162329,
+    "unique_bigrams": 42568,
+    "vendi": 41.356567135497365,
+    "test_coverage": 0.5378947257995605
+   },
+   "3000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.5449999999999999,
+    "top10_key_share": 0.21,
+    "near_dup_rate": 0.072,
+    "distinct2": 0.35757278130351566,
+    "unique_bigrams": 56794,
+    "vendi": 41.61315605596681,
+    "test_coverage": 0.548209011554718
+   },
+   "5000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.595,
+    "top10_key_share": 0.2132,
+    "near_dup_rate": 0.0982,
+    "distinct2": 0.30478139352926353,
+    "unique_bigrams": 81024,
+    "vendi": 41.67868043515883,
+    "test_coverage": 0.560641348361969
+   }
+  },
+  "roc|real|2": {
+   "100": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.010000000000000009,
+    "top10_key_share": 0.11,
+    "near_dup_rate": 0.0,
+    "distinct2": 0.813567143516382,
+    "unique_bigrams": 3526,
+    "vendi": 42.04115340363479,
+    "test_coverage": 0.4700702130794525
+   },
+   "200": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.010000000000000009,
+    "top10_key_share": 0.06,
+    "near_dup_rate": 0.0,
+    "distinct2": 0.7486363130357342,
+    "unique_bigrams": 6725,
+    "vendi": 59.44947395920569,
+    "test_coverage": 0.5004200339317322
+   },
+   "300": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.00666666666666671,
+    "top10_key_share": 0.04,
+    "near_dup_rate": 0.0,
+    "distinct2": 0.7136458644371454,
+    "unique_bigrams": 9560,
+    "vendi": 69.58908775695188,
+    "test_coverage": 0.5155060887336731
+   },
+   "500": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.010000000000000009,
+    "top10_key_share": 0.03,
+    "near_dup_rate": 0.0,
+    "distinct2": 0.6597432697450526,
+    "unique_bigrams": 14802,
+    "vendi": 77.01826191622145,
+    "test_coverage": 0.5362823605537415
+   },
+   "1000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.029000000000000026,
+    "top10_key_share": 0.02,
+    "near_dup_rate": 0.0,
+    "distinct2": 0.5888232519485187,
+    "unique_bigrams": 26215,
+    "vendi": 83.3148590823728,
+    "test_coverage": 0.5626236200332642
+   },
+   "2000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.04400000000000004,
+    "top10_key_share": 0.016,
+    "near_dup_rate": 0.0,
+    "distinct2": 0.5138986271006265,
+    "unique_bigrams": 45442,
+    "vendi": 85.81200268172459,
+    "test_coverage": 0.587577223777771
+   },
+   "3000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.06133333333333335,
+    "top10_key_share": 0.014,
+    "near_dup_rate": 0.0,
+    "distinct2": 0.4706383106952637,
+    "unique_bigrams": 62473,
+    "vendi": 86.80321649752814,
+    "test_coverage": 0.6027176976203918
+   },
+   "5000": {
+    "exact_dup_rate": 0.0,
+    "key_dup_rate": 0.09299999999999997,
+    "top10_key_share": 0.0116,
+    "near_dup_rate": 0.0002,
+    "distinct2": 0.41764780294747494,
+    "unique_bigrams": 92443,
+    "vendi": 86.9080231887226,
+    "test_coverage": 0.6226845979690552
+   }
+  }
+ },
+ "pools": {
+  "mbpp|0": {
+   "requests": 7000,
+   "parsed": 6602,
+   "valid": 3626,
+   "exec": {
+    "AssertionError": 2710,
+    "pass": 3626,
+    "UnicodeDecodeError": 1,
+    "NameError": 108,
+    "SyntaxError": 22,
+    "TypeError": 48,
+    "IndexError": 25,
+    "ValueError": 17,
+    "AttributeError": 11,
+    "KeyError": 7,
+    "RecursionError": 8,
+    "timeout": 5,
+    "UnboundLocalError": 4,
+    "FileNotFoundError": 6,
+    "error": 1,
+    "ImportError": 1,
+    "ModuleNotFoundError": 2
+   }
+  },
+  "mbpp|top_keys": [
+   [
+    "factorial",
+    523
+   ],
+   [
+    "fibonacci",
+    197
+   ],
+   [
+    "flatten_list",
+    109
+   ],
+   [
+    "longest_common_prefix",
+    89
+   ],
+   [
+    "is_palindrome",
+    74
+   ],
+   [
+    "sum_of_primes",
+    60
+   ],
+   [
+    "power",
+    54
+   ],
+   [
+    "sum_even_numbers",
+    45
+   ],
+   [
+    "count_vowels",
+    38
+   ],
+   [
+    "longest_increasing_subsequence",
+    35
+   ],
+   [
+    "longest_common_subsequence",
+    34
+   ],
+   [
+    "second_largest",
+    32
+   ],
+   [
+    "second_largest_unique",
+    31
+   ],
+   [
+    "longest_palindromic_subsequence",
+    30
+   ],
+   [
+    "longest_palindrome",
+    28
+   ]
+  ],
+  "mbpp|1": {
+   "requests": 7000,
+   "parsed": 6688,
+   "valid": 3830,
+   "exec": {
+    "AssertionError": 2596,
+    "pass": 3830,
+    "ModuleNotFoundError": 2,
+    "NameError": 103,
+    "TypeError": 48,
+    "timeout": 5,
+    "IndexError": 19,
+    "RecursionError": 10,
+    "SyntaxError": 27,
+    "AttributeError": 7,
+    "UnboundLocalError": 4,
+    "ValueError": 15,
+    "ZeroDivisionError": 9,
+    "KeyError": 8,
+    "FileNotFoundError": 5
+   }
+  },
+  "mbpp|2": {
+   "requests": 7000,
+   "parsed": 6537,
+   "valid": 3527,
+   "exec": {
+    "pass": 3527,
+    "AssertionError": 2750,
+    "AttributeError": 10,
+    "UnboundLocalError": 2,
+    "KeyError": 10,
+    "IndexError": 26,
+    "NameError": 90,
+    "FileNotFoundError": 3,
+    "SyntaxError": 18,
+    "TypeError": 57,
+    "RecursionError": 12,
+    "ZeroDivisionError": 3,
+    "error": 2,
+    "ValueError": 21,
+    "timeout": 3,
+    "ModuleNotFoundError": 2,
+    "RuntimeError": 1
+   }
+  },
+  "gsm8k|0": {
+   "requests": 5200,
+   "parsed": 5174,
+   "valid": 5174,
+   "exec": {}
+  },
+  "gsm8k|top_keys": [
+   [
+    "Sarah",
+    1232
+   ],
+   [
+    "At",
+    770
+   ],
+   [
+    "In",
+    625
+   ],
+   [
+    "If",
+    593
+   ],
+   [
+    "He",
+    239
+   ],
+   [
+    "Maria",
+    226
+   ],
+   [
+    "She",
+    206
+   ],
+   [
+    "During",
+    150
+   ],
+   [
+    "Each",
+    142
+   ],
+   [
+    "They",
+    110
+   ],
+   [
+    "John",
+    62
+   ],
+   [
+    "Emily",
+    56
+   ],
+   [
+    "How",
+    54
+   ],
+   [
+    "Emma",
+    53
+   ],
+   [
+    "Alice",
+    52
+   ]
+  ],
+  "gsm8k|1": {
+   "requests": 5200,
+   "parsed": 5168,
+   "valid": 5168,
+   "exec": {}
+  },
+  "gsm8k|2": {
+   "requests": 5200,
+   "parsed": 5166,
+   "valid": 5166,
+   "exec": {}
+  },
+  "roc|0": {
+   "requests": 5200,
+   "parsed": 5197,
+   "valid": 5197,
+   "exec": {}
+  },
+  "roc|top_keys": [
+   [
+    "the book swap",
+    161
+   ],
+   [
+    "birthday surprise",
+    159
+   ],
+   [
+    "book swap",
+    96
+   ],
+   [
+    "lost key",
+    95
+   ],
+   [
+    "the lost key",
+    93
+   ],
+   [
+    "unexpected visitor",
+    72
+   ],
+   [
+    "the bookshelf",
+    68
+   ],
+   [
+    "lost keys",
+    68
+   ],
+   [
+    "lost wallet",
+    67
+   ],
+   [
+    "the book club",
+    65
+   ],
+   [
+    "book club",
+    49
+   ],
+   [
+    "unexpected gift",
+    45
+   ],
+   [
+    "unexpected rain",
+    41
+   ],
+   [
+    "lost locket",
+    34
+   ],
+   [
+    "the book",
+    34
+   ]
+  ],
+  "roc|1": {
+   "requests": 5200,
+   "parsed": 5197,
+   "valid": 5197,
+   "exec": {}
+  },
+  "roc|2": {
+   "requests": 5200,
+   "parsed": 5199,
+   "valid": 5199,
+   "exec": {}
+  }
+ }
+}

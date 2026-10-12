@@ -1,0 +1,5 @@
+{
+ "model": "Qwen/Qwen2.5-3B-Instruct",
+ "mbpp": 0.574,
+ "gsm8k": 0.85
+}

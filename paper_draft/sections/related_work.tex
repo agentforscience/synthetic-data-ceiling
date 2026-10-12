@@ -1,0 +1,22 @@
+\section{Related Work}
+\label{sec:related}
+
+\para{Model collapse under recursive training.}
+\citet{shumailov2023curse,shumailov2024collapse} show that models trained repeatedly on the outputs of earlier model generations forget the tails of the original distribution.
+\citet{alemohammad2024mad} report a similar loss of quality or diversity in self-consuming image generators when too little fresh real data enters each generation.
+\citet{dohmatob2024tale} analyze collapse as a change in scaling laws, and \citet{guo2023curious} document declining linguistic diversity when language models train on synthetic text.
+\citet{gerstgrasser2024inevitable} and \citet{bertrand2024stability} find that accumulating or retaining real data alongside synthetic data limits collapse.
+Unlike this line of work, we study a single round of generation by a stronger teacher with a fixed real set, and we vary the mixing ratio rather than the number of generations.
+We ask whether the diversity loss that drives recursive collapse is already visible, and already costly, after one round.
+
+\para{Synthetic data for augmentation.}
+In vision, \citet{he2023synthetic} and \citet{azizi2023synthetic} examine when images from generative models help recognition, and \citet{fan2024scaling} study how the benefit scales with the number of synthetic images.
+In language, \citet{ye2022zerogen} train small task models entirely on generated data, \citet{yu2023attributed} show that attribute-controlled prompts make generated data more diverse and less biased, and \citet{li2023synthetic} find that the usefulness of generated data for text classification depends on the task.
+Each of these studies covers one task family with its own generator, student, and metric.
+Building on their observation that more synthetic data gives diminishing returns, we hold the teacher, student, real-set size, and ratio grid fixed across three task families, and we add a real-data control at matched size so that a plateau can be attributed to the data source and not to the capacity of the student.
+The setting is also close to knowledge distillation~\citep{hinton2015distilling}, with generated examples carrying the teacher's knowledge instead of soft labels.
+
+\para{Measuring diversity.}
+Lexical diversity of generated text is commonly summarized by distinct-$n$~\citep{li2016diversity}.
+The Vendi score~\citep{friedman2023vendi} gives an effective number of distinct items from the eigenvalues of a similarity matrix, and Fr\'echet distances between embedding distributions~\citep{heusel2017gans} compare a generated set to a reference set.
+We use all three and find that they disagree in an informative way: synthetic-trained students keep their distinct-2 score while their stories become more alike in embedding space.

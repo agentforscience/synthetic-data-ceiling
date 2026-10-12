@@ -1,0 +1,18 @@
+{
+  "success": true,
+  "stages": {
+    "resource_finder": {
+      "success": true,
+      "skipped": true
+    },
+    "experiment_runner": {
+      "success": true,
+      "return_code": 0,
+      "elapsed_time": 14414.908684492111,
+      "log_file": "/data/summereunann/neurico-workspaces/the_synthetic_data_ceiling__di_20261012_130125_601c9c29/logs/execution_claude.log",
+      "transcript_file": "/data/summereunann/neurico-workspaces/the_synthetic_data_ceiling__di_20261012_130125_601c9c29/logs/execution_claude_transcript.jsonl",
+      "background_processes_terminated": false
+    }
+  },
+  "work_dir": "/data/summereunann/neurico-workspaces/the_synthetic_data_ceiling__di_20261012_130125_601c9c29"
+}

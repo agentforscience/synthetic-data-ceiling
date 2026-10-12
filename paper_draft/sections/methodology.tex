@@ -1,0 +1,76 @@
+\section{Methodology}
+\label{sec:method}
+
+\subsection{Problem Setup and Hypotheses}
+
+Let $\gD_{\text{real}}$ be a real training set of $n = 100$ examples and let $\gD_{\text{syn}}$ be a pool of examples written by a teacher model that has access only to $\gD_{\text{real}}$.
+For a ratio $r \geq 0$ we fine-tune a student on $\gD_{\text{real}}$ plus the first $rn$ examples of $\gD_{\text{syn}}$ and measure its performance $P(r)$ on real held-out data.
+We define the gain $G(r) = P(r) - P(0)$ and the normalized benefit
+\begin{equation}
+    B(r) = \frac{P(r) - P(0)}{\max_{r'} P(r') - P(0)},
+    \label{eq:benefit}
+\end{equation}
+the share of the maximum observed gain reached at ratio $r$.
+We split the hypothesis into five testable claims:
+\begin{itemize}[leftmargin=*,itemsep=0pt,topsep=0pt]
+    \item {\bf H1a (shape).} $G(r)$ is better described by $a \ln(1+r)$ than by linear, power-law, or bounded saturating forms.
+    \item {\bf H1b (80\% at \ratio{3}).} $B(3) \geq 0.8$.
+    \item {\bf H2a (plateau or degradation).} $P$ does not increase beyond \ratio{10}.
+    \item {\bf H2b (mechanism).} The diversity of the synthetic pool saturates as the pool grows, and students inherit the generator's modes.
+    \item {\bf H3 (ordering).} Code is the most resilient domain at high ratios; creative writing degrades earliest.
+\end{itemize}
+
+\subsection{Tasks, Data, and Metrics}
+
+\Tabref{tab:tasks} lists the three task families.
+For code we use \mbpp~\citep{austin2021program} and score pass@1 by executing the hidden assertions; following standard practice the prompt shows the assertions.
+For math we use \gsm~\citep{cobbe2021training} and score exact match of the number after the \texttt{\#\#\#\#} marker.
+For creative writing we use \roc~\citep{mostafazadeh2016corpus}: the model receives a title and writes a five-sentence story.
+Open-ended generation has no single accepted metric, so we take the per-token negative log-likelihood (NLL) of human-written test stories as the primary metric, and we also sample 500 stories per model to measure distinct-2~\citep{li2016diversity}, mean pairwise embedding similarity, and the Fr\'echet distance~\citep{heusel2017gans} between embeddings of student and human stories for the same titles.
+
+\para{Shared metric.} Task metrics differ across domains, so we also report a metric common to all three: the per-token NLL of the real held-out reference answers. It measures how well the student fits the real data distribution, independently of whether its own outputs are correct.
+
+\begin{table}[t]
+    \centering
+    \caption{Tasks and data. Each seed draws its own 100-example real seed set. Accuracy metrics use 500 test items; NLL uses 500 (\mbpp), 1,319 (\gsm), and 1,000 (\roc) items.}
+    \label{tab:tasks}
+    \begin{tabular}{@{}lllccl@{}}
+        \toprule
+        \textbf{Domain} & \textbf{Dataset} & \textbf{Real seed} & \textbf{Val.} & \textbf{Test} & \textbf{Task metric} \\
+        \midrule
+        \codetask & \mbpp & 100 of 374 train & 90 & 500 & pass@1 \\
+        \mathtask & \gsm & 100 of train & 200 & 500 & exact-match accuracy \\
+        \creativetask & \roc & 100 of train & 200 & 1,000 / 500 titles & NLL of human stories \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Models and Training}
+
+\para{Teacher.} The generator is \teacher~\citep{qwen25} served with vLLM~\citep{kwon2023vllm} at temperature 1.0 and top-$p$ 0.95, with at most 512 new tokens. Each request shows three random examples from that seed's 100 real examples and asks for one new example, so the generator knows the task only through the real seed set. On the same test items the teacher is clearly stronger than the untuned student: 57.4\% against 34.8\% pass@1 on \mbpp, and 85.0\% against 34.0\% on \gsm (zero-shot, lenient answer parsing).
+
+\para{Student.} The student is \student, fine-tuned with LoRA~\citep{hu2022lora} at rank 32 on all attention and MLP projections (17.6M trainable parameters). We train with AdamW at learning rate $10^{-4}$, batch size 8, 10\% warm-up and cosine decay, for the larger of two epochs and 100 steps. We measure the loss on a small \emph{real} validation set six times per run and evaluate the best checkpoint, so that small training sets are not penalized by over-training. We decode greedily for code and math and sample ($T = 1$, top-$p$ 0.95) for stories. \Secref{sec:app_details} lists the remaining settings.
+
+\para{Synthetic pools.} We keep teacher outputs that parse. For code we also require that the teacher's solution passes the teacher's own three assertions, which leaves 51--55\% of 7,000 requests per seed (3,527--3,830 examples). For math and stories about 99\% of 5,200 requests survive. We do \emph{not} de-duplicate the pools, because duplication is part of the phenomenon we study.
+
+\subsection{Conditions and Baselines}
+
+\para{Ratio sweep.} We use $r \in \{0, 1, 2, 3, 5, 10, 20, 30\}$ for all tasks and add $r = 50$ for math and creative writing; the yield of the code pools does not support \ratio{50}. Training sets are nested: the \ratio{1} set is a prefix of the \ratio{3} set, and so on.
+
+\para{All-real control.} A plateau could reflect the capacity of the student and not the source of the data. We therefore train on all-real sets of the same total size: $r \in \{1, 3, 10, 30\}$ for math and creative writing, and $r \in \{1, 2.74\}$ for code, where 2.74 corresponds to all 374 \mbpp training problems.
+
+\para{Other baselines.} We report the untuned (zero-shot) student, the zero-shot teacher, and an ablation that removes the execution filter from the code pool at ratios 3 and 30.
+
+\para{Seeds.} We run three seeds. Each seed has its own real seed set \emph{and} its own independently generated pool, so seed variance includes real-set and generator variance. The full grid has 117 runs.
+
+\subsection{Diversity Measurements}
+
+To test H2b we compare synthetic pools with real data at equal size.
+We compute the share of exact duplicates, the share of examples with a near-duplicate earlier in the set (cosine similarity above 0.9 between \textsc{all-MiniLM-L6-v2} sentence embeddings~\citep{reimers2019sentence}), the distinct-bigram ratio, the Vendi score~\citep{friedman2023vendi}, and coverage of the real test set, defined as the mean similarity of each real test item to its nearest training example.
+
+\subsection{Statistical Analysis}
+
+We compute confidence intervals and two-sided $p$-values with a two-level paired bootstrap~\citep{efron1979bootstrap} that resamples seeds and then test items (4,000 replicates).
+For each planned contrast we apply the Holm correction~\citep{holm1979simple} across the three tasks.
+For H1a we fit five curves to the seed-level gains (linear, $a\ln(1+r)$, power law $a r^b$, hyperbolic $a r/(r+k)$, and exponential saturation $a(1-e^{-r/k})$) and compare them with the small-sample Akaike criterion AICc~\citep{hurvich1989regression}.
+We fixed the hypotheses, metrics, and tests before running experiments; \secref{sec:app_deviations} lists the deviations from that plan.

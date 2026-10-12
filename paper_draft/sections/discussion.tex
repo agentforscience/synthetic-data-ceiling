@@ -1,0 +1,75 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\begin{table}[t]
+    \centering
+    \caption{Verdict for each part of the hypothesis.}
+    \label{tab:verdict}
+    \renewcommand{\arraystretch}{1.2}
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{@{}llp{9.2cm}@{}}
+        \toprule
+        \textbf{Claim} & \textbf{Verdict} & \textbf{Evidence} \\
+        \midrule
+        H1a: gains are logarithmic & Partly (math only) & Log is the best model for math but explains little variance ($R^2 = 0.28$). Code follows a bounded saturating curve; creative ``gains'' are negative. \\
+        H1b: 80\% of benefit at \ratio{3} & Not supported & Code 63\% (CI 13--100\%), math 40\% (CI 6--64\%), undefined for creative writing. \\
+        H2a: plateau or degradation beyond \ratio{10} & Depends on domain and metric & Code accuracy plateaus; math accuracy shows no plateau up to \ratio{50}; creative fit degrades. NLL on real references degrades in all three. \\
+        H2b: mode collapse is the mechanism & Consistent, not proven & Pool diversity saturates and students inherit teacher modes, but we do not manipulate diversity. \\
+        H3: code most resilient, creative earliest & Half supported & Creative writing degrades from the first synthetic example. Code is stable, but math tolerates and benefits from the highest ratios. \\
+        \bottomrule
+    \end{tabular}
+    }
+\end{table}
+
+\Tabref{tab:verdict} summarizes the verdicts.
+We now interpret the pattern and state what the study cannot show.
+
+\para{Two effects pull in opposite directions.}
+Synthetic data transfers the teacher's \emph{skill}, which helps where an answer is right or wrong, and the teacher's \emph{distribution}, which hurts where the target is the human distribution.
+Math shows both at once: the student becomes a better solver while it becomes a worse imitator of the reference style of \gsm.
+Stories have no skill component in our metrics, so only the distribution shift is visible.
+This view explains why the task metric and the shared metric disagree beyond \ratio{10}, and why no single ceiling exists.
+
+\para{Why does synthetic math data beat real data?}
+At the \ratio{30} size the synthetic mix is 6.5 points more accurate than 3,100 real \gsm examples.
+We did not expect this.
+A plausible explanation, which we did not test, is that the teacher's worked solutions are more uniform and explicit than human-written ones, and that a 0.5B model learns from them more easily.
+We also did not verify the correctness of the teacher's math solutions.
+
+\para{Why does code saturate early?}
+The code pools are the most collapsed, with 79\% near-duplicates at 3,000 examples, so ratios beyond about \ratio{5} add almost no new problems.
+The student keeps re-reading \texttt{factorial}.
+The execution filter may contribute by favoring easy problems the teacher can solve, but our ablation cannot settle this.
+
+\para{Small doses can be the worst doses.}
+On the shared metric, \ratio{1} is the worst ratio for code and is worse than every ratio from \ratio{2} to \ratio{10} for stories.
+One reading, which we did not test, is that a small amount of synthetic data shifts the distribution without yet adding much skill.
+
+\para{Diversity metrics can miss homogenization.}
+Distinct-2 of student stories does not fall with the synthetic ratio, while the Fr\'echet distance to human stories roughly doubles and one teacher-preferred name becomes 15 times more frequent.
+Studies that track only $n$-gram diversity would miss this.
+
+\para{Practical implications.}
+For verifiable skills such as code and arithmetic reasoning, extra synthetic data did not hurt task accuracy up to \ratio{30}--\ratio{50} in our setting, but most of the code benefit arrived by about \ratio{5}.
+For open-ended generation, where the goal is to match a human distribution, synthetic data from a single generator hurt at every ratio we tested, and 100 more real examples were worth more than 5,000 synthetic ones.
+
+\subsection{Limitations}
+\label{sec:limitations}
+
+\para{Statistical power.} Three seeds and 500 test items give 95\% CIs of about $\pm 4$ points on accuracy. Differences of under about 4 points between adjacent ratios are within noise. Only the \ratio{3}-against-0 and peak-against-0 contrasts are significant for code and math, so ``plateau'' for code and ``still rising'' for math are statements our data cannot sharply distinguish. A seed-level bootstrap with three seeds is coarse. The NLL-based results are much tighter.
+
+\para{The share statistic.} $B(3)$ uses the maximum over a noisy grid, which biases the share at \ratio{3} downward. The location of the code maximum is itself uncertain: \ratio{30} is the best ratio in only 39\% of bootstrap resamples. For math the maximum is at the edge of the grid.
+
+\para{One configuration.} We use one teacher (3B), one student (0.5B, LoRA rank 32), one real-set size (100), and one generation recipe (3-shot, $T = 1$, no de-duplication, no diversity prompting). A stronger teacher, attribute-controlled prompting~\citep{yu2023attributed}, or de-duplication would likely move the curves.
+
+\para{Training budget.} We train for at most two epochs with early stopping, so larger ratios receive more gradient steps. We did not match compute across ratios.
+
+\para{Code is not directly comparable to the other domains.} Its pool is execution-filtered, its grid stops at \ratio{30}, and its real-data control stops at \ratio{2.74} because \mbpp is small.
+
+\para{Creative quality.} We measure fit to human text and distributional distance. We collected no human or model-judge ratings of story quality; synthetic-trained stories may read as more polished while being less human-like.
+
+\para{Contamination.} \mbpp, \gsm, and \roc are probably in the pre-training data of both models. This affects absolute levels more than the comparison between ratios.
+
+\para{Zero-shot math baseline.} The 256-token generation cap depresses the zero-shot math score; a pilot with 320 tokens on all 1,319 test items gave 41.8\%.
+
+\para{Mechanism.} The link between mode collapse and the dose--response curves is correlational. No experiment varied pool diversity while holding size fixed.

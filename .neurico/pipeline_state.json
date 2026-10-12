@@ -1,0 +1,30 @@
+{
+  "created_at": "2026-10-12T18:01:38.284704Z",
+  "stages": {
+    "resource_finder": {
+      "status": "completed",
+      "completed_at": "2026-10-12T18:01:38.310282Z",
+      "success": true,
+      "outputs": {
+        "skipped": true
+      }
+    },
+    "experiment_runner": {
+      "status": "completed",
+      "started_at": "2026-10-12T18:01:38.320432Z",
+      "completed_at": "2026-10-12T22:01:53.308086Z",
+      "success": true,
+      "outputs": {
+        "success": true,
+        "return_code": 0,
+        "elapsed_time": 14414.908684492111,
+        "log_file": "/data/summereunann/neurico-workspaces/the_synthetic_data_ceiling__di_20261012_130125_601c9c29/logs/execution_claude.log",
+        "transcript_file": "/data/summereunann/neurico-workspaces/the_synthetic_data_ceiling__di_20261012_130125_601c9c29/logs/execution_claude_transcript.jsonl",
+        "background_processes_terminated": false
+      }
+    }
+  },
+  "current_stage": null,
+  "completed": true,
+  "completed_at": "2026-10-12T22:01:53.612314Z"
+}
